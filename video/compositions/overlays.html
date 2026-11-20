@@ -4,170 +4,201 @@
     <template>
       <style>
         #root { position: absolute; inset: 0; width: 1080px; height: 1920px; pointer-events: none; font-family: "Montserrat"; }
-        #scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1100px; background: linear-gradient(rgba(0,0,0,.72) 0%, rgba(0,0,0,.55) 55%, rgba(0,0,0,0) 100%); }
-        #scrim, #hook, #para-badge, #para-frame, .chip, .stat, .yt, #end { visibility: hidden; }
-        #hook { position: absolute; left: 0; width: 1080px; top: 330px; text-align: center; color: #fff; }
-        #hook-kicker { display: inline-block; font-weight: 800; font-size: 34px; letter-spacing: .08em; background: #ffcc1f; color: #111; padding: 10px 22px; border-radius: 8px; }
-        #hook-big { font-weight: 900; font-size: 168px; line-height: 1; margin-top: 18px; color: #ffcc1f; letter-spacing: -0.03em;
-                     -webkit-text-stroke: 4px #111; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(0,0,0,.6), 0 0 50px rgba(0,0,0,.6); }
-        #hook-sub { font-weight: 800; font-size: 54px; margin-top: 16px; padding: 0 90px; line-height: 1.12; text-shadow: 0 4px 16px rgba(0,0,0,.9); -webkit-text-stroke: 2px #000; paint-order: stroke fill; }
+        #scrim, #hook, #para-badge, #para-frame, .chip, .stat, .yt, .pcard, .pchip, .big, #jaguh { visibility: hidden; }
+        #scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1150px; background: linear-gradient(rgba(0,0,0,.75) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,0) 100%); }
+        #hook { position: absolute; left: 0; width: 1080px; top: 360px; text-align: center; color: #fff; }
+        #hook-kicker { display: inline-block; font-weight: 800; font-size: 36px; letter-spacing: .1em; background: #ffcc1f; color: #111; padding: 10px 24px; border-radius: 8px; }
+        #hook-big { font-weight: 900; font-size: 110px; line-height: 1; margin-top: 22px; letter-spacing: -0.02em; color: #fff;
+                     -webkit-text-stroke: 4px #111; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(0,0,0,.55), 0 0 60px rgba(255,204,31,.45); }
+        .L { display: inline-block; }
+        #hook-sub { display: inline-block; font-weight: 900; font-size: 76px; margin-top: 14px; color: #ffcc1f; letter-spacing: .06em; -webkit-text-stroke: 3px #111; paint-order: stroke fill; text-shadow: 0 6px 20px rgba(0,0,0,.8); }
         #para-frame { position: absolute; inset: 0; border: 14px solid #ffcc1f; box-shadow: inset 0 0 90px rgba(255,204,31,.45); }
         #para-badge { position: absolute; left: 0; width: 1080px; top: 300px; text-align: center; }
         #para-badge .pill { display: inline-block; font-weight: 900; font-size: 38px; letter-spacing: .05em; color: #fff; background: #e21d2c; padding: 10px 24px; border-radius: 40px; }
         #para-badge .dot { display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: #fff; margin-right: 12px; vertical-align: middle; }
         .chip { position: absolute; left: 0; width: 1080px; top: 392px; text-align: center; }
-        .chip span { display: inline-block; font-weight: 800; font-size: 40px; letter-spacing: .02em; color: #fff; background: rgba(10,12,20,.82); padding: 12px 26px; border-radius: 10px; border-left: 8px solid #ffcc1f; }
+        .chip span { display: inline-block; font-weight: 800; font-size: 38px; letter-spacing: .02em; color: #fff; background: rgba(10,12,20,.84); padding: 12px 26px; border-radius: 10px; border-left: 8px solid #ffcc1f; max-width: 940px; }
         .chip.para span { background: #ffcc1f; color: #111; border-left-color: #e21d2c; }
-        .chip.gold { top: 330px; }
-        .chip.gold span { background: rgba(10,12,20,.86); font-size: 36px; max-width: 900px; }
-        .stat { position: absolute; left: 90px; width: 900px; top: 300px; text-align: center; background: rgba(8,10,18,.84); border: 3px solid #ffcc1f; border-radius: 22px; padding: 26px 24px 30px; color: #fff; }
+        .chip.gold span { font-size: 36px; }
+        .pcard { position: absolute; left: 60px; width: 960px; top: 720px; padding: 34px 40px 40px; background: rgba(8,10,18,.92); border: 4px solid #ffcc1f; border-radius: 28px; color: #fff; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+        .pc-num { font-weight: 900; font-size: 150px; line-height: .95; color: #ffcc1f; letter-spacing: -0.03em; }
+        .pc-title { font-weight: 900; font-size: 64px; line-height: 1.05; margin-top: 10px; letter-spacing: -0.01em; }
+        .pc-sub { font-weight: 700; font-size: 38px; margin-top: 12px; color: #d9dbe4; }
+        .pchip { position: absolute; left: 0; width: 1080px; top: 296px; text-align: center; font-weight: 900; }
+        .pchip .pn { display: inline-block; font-size: 34px; background: #ffcc1f; color: #111; padding: 10px 16px; border-radius: 10px 0 0 10px; }
+        .pchip .pt { display: inline-block; font-size: 34px; background: rgba(8,10,18,.88); color: #fff; padding: 10px 20px; border-radius: 0 10px 10px 0; letter-spacing: .02em; }
+        .stat { position: absolute; left: 90px; width: 900px; top: 400px; text-align: center; background: rgba(8,10,18,.86); border: 3px solid #ffcc1f; border-radius: 22px; padding: 24px 24px 28px; color: #fff; }
         .stat-top { font-weight: 800; font-size: 32px; letter-spacing: .06em; color: #ffcc1f; }
-        .stat-big { font-weight: 900; font-size: 104px; line-height: 1.05; margin-top: 8px; letter-spacing: -0.02em; }
+        .stat-big { font-weight: 900; font-size: 100px; line-height: 1.05; margin-top: 8px; letter-spacing: -0.02em; }
         .stat-big b { color: #ffcc1f; }
         .stat-sub { font-weight: 600; font-size: 34px; margin-top: 8px; color: #e8e8ee; }
         .yt { position: absolute; left: 70px; width: 940px; top: 470px; height: 529px; border-radius: 22px; overflow: hidden; border: 5px solid #fff; box-shadow: 0 24px 60px rgba(0,0,0,.6); background: #000; }
         .yt-img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
-        .yt-ph { position: absolute; left: 0; top: 0; width: 100%; padding: 10px; text-align: center; font-weight: 800; font-size: 30px; color: #111; background: rgba(255,204,31,.92); }
-        .yt-cred { position: absolute; left: 0; bottom: 0; width: 100%; padding: 12px 18px; font-weight: 800; font-size: 32px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
-        #end { position: absolute; left: 0; width: 1080px; top: 560px; text-align: center; color: #fff; padding: 0 80px; }
-        #end-kicker { font-weight: 800; font-size: 30px; letter-spacing: .06em; color: #ffcc1f; }
-        #end-big { font-weight: 900; font-size: 150px; line-height: 1.05; margin-top: 10px; -webkit-text-stroke: 4px #111; paint-order: stroke fill; text-shadow: 0 10px 30px rgba(0,0,0,.8); }
-        #end-sub { font-weight: 700; font-size: 40px; margin-top: 20px; line-height: 1.25; text-shadow: 0 4px 16px rgba(0,0,0,.9); }
+        .yt-cred { position: absolute; left: 0; bottom: 0; width: 100%; padding: 12px 18px; font-weight: 800; font-size: 30px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
+        .big { position: absolute; left: 0; width: 1080px; top: 520px; text-align: center; padding: 0 60px; }
+        .big span { display: inline-block; font-weight: 900; font-size: 120px; line-height: 1.02; color: #fff; letter-spacing: -0.02em; -webkit-text-stroke: 4px #111; paint-order: stroke fill; text-shadow: 0 10px 0 rgba(0,0,0,.55), 0 0 50px rgba(0,0,0,.6); }
+        .big.gold span { color: #ffcc1f; font-size: 104px; }
+        #jaguh { position: absolute; left: 70px; width: 940px; top: 470px; text-align: center; background: rgba(8,10,18,.86); border: 4px solid #ffcc1f; border-radius: 26px; padding: 30px 30px 36px; }
+        .jg-list span { display: inline-block; font-weight: 800; font-size: 40px; color: #111; background: #ffcc1f; padding: 8px 18px; border-radius: 10px; margin: 6px; }
+        .jg-big { font-weight: 900; font-size: 86px; line-height: 1.02; color: #fff; margin-top: 18px; letter-spacing: -0.02em; }
       </style>
       <div id="root" data-composition-id="gfx" data-width="1080" data-height="1920" data-layout-allow-overflow data-layout-allow-overlap>
         <div id="scrim"></div>
         <div id="hook">
-          <div id="hook-kicker">INSENTIF KECEMERLANGAN ATLET PAHANG</div>
-          <div id="hook-big">RM<span id="hook-num">809,050</span></div>
-          <div id="hook-sub">untuk jaguh sukan &amp; para atlet Pahang</div>
+          <div id="hook-kicker">MULAI JANUARI 2027</div>
+          <div id="hook-big"><span class="L" id="hl0">T</span><span class="L" id="hl1">R</span><span class="L" id="hl2">A</span><span class="L" id="hl3">N</span><span class="L" id="hl4">S</span><span class="L" id="hl5">F</span><span class="L" id="hl6">O</span><span class="L" id="hl7">R</span><span class="L" id="hl8">M</span><span class="L" id="hl9">A</span><span class="L" id="hl10">S</span><span class="L" id="hl11">I</span></div>
+          <div id="hook-sub">SUKAN PAHANG</div>
         </div>
+        <div class="chip" id="ch-majlis"><span>MAJLIS INSENTIF ATLET PAHANG 2026</span></div>
         <div id="para-badge"><span class="pill"><span class="dot"></span>HIGHLIGHT · ATLET PARALIMPIK</span></div>
         <div id="para-frame"></div>
         <div class="chip para" id="pl-1219"><span>LOH CHI HUI · ASIAN PARA GAMES</span></div>
-        <div class="chip para" id="pl-1220"><span>PARA BADMINTON</span></div>
-        <div class="chip para" id="pl-1221"><span>PARA POWERLIFTING</span></div>
-        <div class="chip para" id="pl-1222"><span>PARA PINGPONG</span></div>
-        <div class="chip para" id="pl-1223"><span>PARA RENANG</span></div>
-        <div class="chip para" id="pl-1225"><span>PARA OLAHRAGA</span></div>
-        <div class="chip para" id="pl-1226"><span>PARA TENPIN BOLING</span></div>
         <div class="chip para" id="pl-1228"><span>PARA MEMANAH</span></div>
-        <div class="chip para" id="pl-1229"><span>PARA BOLING PADANG</span></div>
+        <div class="pcard" id="pc0"><div class="pc-num">01</div><div class="pc-title">INSENTIF ATLET NAIK RM1,000</div><div class="pc-sub">Hoki &amp; menembak</div></div>
+        <div class="pchip" id="pp0"><span class="pn">01</span><span class="pt">INSENTIF ATLET NAIK RM1,000</span></div>
+        <div class="pcard" id="pc1"><div class="pc-num">02</div><div class="pc-title">GAJI BAHARU JURULATIH</div><div class="pc-sub">Mulai Januari 2027 · kompetitif</div></div>
+        <div class="pchip" id="pp1"><span class="pn">02</span><span class="pt">GAJI BAHARU JURULATIH</span></div>
+        <div class="pcard" id="pc2"><div class="pc-num">03</div><div class="pc-title">TAMBAH JURULATIH</div><div class="pc-sub">Olahraga · Silat · Angkat berat</div></div>
+        <div class="pchip" id="pp2"><span class="pn">03</span><span class="pt">TAMBAH JURULATIH</span></div>
         <div class="stat" id="st-hoki"><div class="stat-top">HOKI &amp; MENEMBAK</div><div class="stat-big">JUARA</div><div class="stat-sub">keseluruhan SUKMA 2026</div></div>
-        <div class="stat" id="st-3k"><div class="stat-top">INSENTIF SETIAP ATLET</div><div class="stat-big">RM2,000 → <b>RM3,000</b></div><div class="stat-sub">hoki &amp; menembak</div></div>
-        <div class="chip gold" id="ch-sosial"><span>CADANGAN ATLET DI MEDIA SOSIAL — DILAKSANAKAN</span></div>
-        <div class="stat" id="st-gaji"><div class="stat-top">GAJI MINIMUM JURULATIH SEPENUH MASA</div><div class="stat-big">RM2,200</div><div class="stat-sub">pelarasan gaji mulai Januari 2027</div></div>
-        <div class="stat" id="st-naik"><div class="stat-top">KENAIKAN GAJI JURULATIH</div><div class="stat-big">+RM200 – RM1,200</div><div class="stat-sub">untuk 43 jurulatih sepenuh masa</div></div>
-        <div class="stat" id="st-komp"><div class="stat-top">MULAI JANUARI 2027</div><div class="stat-big">KOMPETITIF</div><div class="stat-sub">lebih tinggi berbanding negeri lain</div></div>
-        <div class="chip gold" id="ch-pelawa"><span>JURULATIH BERKELAYAKAN? CARI REZEKI DI PAHANG</span></div>
-        <div class="yt" id="yt-para">
-          <video id="yt-para-v" class="clip yt-img" src="assets/yt/memanah_para.mp4" data-start="14.80" data-duration="2.75" data-media-start="0" muted playsinline></video>
-          <div class="yt-cred">▶ Para SUKMA · Para Recurve · Pahang vs Sabah</div>
-        </div>
         <div class="yt" id="yt-cheah">
-          <video id="yt-cheah-v" class="clip yt-img" src="assets/yt/cheah_shoot.mp4" data-start="23.99" data-duration="4.80" data-media-start="0" muted playsinline></video>
-          
+          <video id="yt-cheah-v" class="clip yt-img" src="assets/yt/cheah_shoot.mp4" data-start="24.51" data-duration="3.35" data-media-start="0" muted playsinline></video>
         </div>
         <div class="chip para" id="ch-cheah"><span>CHEAH ZEN HONG · PECAH REKOD SUKMA</span></div>
-        <div id="end">
-          <div id="end-kicker">INSENTIF KECEMERLANGAN ATLET PAHANG</div>
-          <div id="end-big">RM809,050</div>
-          <div id="end-sub">Atlet dihargai · Jurulatih diperkasa</div>
+        <div class="stat" id="st-3k"><div class="stat-top">INSENTIF SETIAP ATLET</div><div class="stat-big">RM2,000 → <b>RM3,000</b></div><div class="stat-sub">hoki &amp; menembak</div></div>
+        <div class="yt" id="yt-para">
+          <video id="yt-para-v" class="clip yt-img" src="assets/yt/memanah_para.mp4" data-start="15.75" data-duration="2.51" data-media-start="0" muted playsinline></video>
+          <div class="yt-cred">▶ Para SUKMA · Para Recurve · Pahang vs Sabah</div>
         </div>
+        <div class="stat" id="st-gaji"><div class="stat-top">GAJI MINIMUM JURULATIH SEPENUH MASA</div><div class="stat-big">RM2,200</div><div class="stat-sub">Pahang · melebihi kadar persekutuan</div></div>
+        <div class="stat" id="st-naik"><div class="stat-top">PELARASAN GAJI BAHARU</div><div class="stat-big">+RM200 – RM1,200</div><div class="stat-sub">untuk jurulatih sepenuh masa</div></div>
+        <div class="stat" id="st-komp"><div class="stat-top">MULAI JANUARI 2027</div><div class="stat-big">KOMPETITIF</div><div class="stat-sub">lebih tinggi berbanding negeri lain</div></div>
+        <div class="chip gold" id="ch-pelawa"><span>JURULATIH BERKELAYAKAN? CARI REZEKI DI PAHANG</span></div>
+        <div class="big" id="bw-ola"><span>OLAHRAGA</span></div>
+        <div class="big" id="bw-sil"><span>SILAT</span></div>
+        <div class="big" id="bw-ang"><span>ANGKAT BERAT</span></div>
+        <div id="jaguh"><div class="jg-list"><span>OLAHRAGA</span><span>SILAT</span><span>ANGKAT BERAT</span></div><div class="jg-big">PAHANG PERNAH JAGUH</div></div>
+        <div class="big gold" id="bw-gem"><span>KEMBALIKAN KEGEMILANGAN</span></div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
         tl.set(["#hook", "#scrim"], { visibility: "visible" }, 0);
-        tl.to("#scrim", { opacity: 0, duration: 0.25 }, 3.65);
-        tl.set("#scrim", { visibility: "hidden" }, 3.90);
-        tl.fromTo("#hook-big", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "expo.out" }, 0);
-        tl.fromTo("#hook-kicker", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.1);
-        tl.fromTo("#hook-sub", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.25);
-        tl.to("#hook-big", { scale: 1.06, duration: 1.6, ease: "sine.inOut" }, 2.1);
-        tl.to("#hook", { opacity: 0, y: -40, duration: 0.25, ease: "power2.in" }, 3.65);
-        tl.set("#hook", { visibility: "hidden" }, 3.90);
-        tl.set(["#para-badge", "#para-frame"], { visibility: "visible" }, 3.90);
-        tl.fromTo("#para-badge", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 3.90);
-        tl.fromTo("#para-frame", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 3.90);
-        tl.to(["#para-badge", "#para-frame"], { opacity: 0, duration: 0.2 }, 18.59);
-        tl.set(["#para-badge", "#para-frame"], { visibility: "hidden" }, 18.79);
-        tl.set("#pl-1219", { visibility: "visible" }, 3.95);
-        tl.fromTo("#pl-1219", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 3.95);
-        tl.to("#pl-1219", { opacity: 0, duration: 0.15, ease: "power2.in" }, 6.03);
-        tl.set("#pl-1219", { visibility: "hidden" }, 6.18);
-        tl.set("#pl-1220", { visibility: "visible" }, 6.25);
-        tl.fromTo("#pl-1220", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 6.25);
-        tl.to("#pl-1220", { opacity: 0, duration: 0.15, ease: "power2.in" }, 7.43);
-        tl.set("#pl-1220", { visibility: "hidden" }, 7.58);
-        tl.set("#pl-1221", { visibility: "visible" }, 7.65);
-        tl.fromTo("#pl-1221", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 7.65);
-        tl.to("#pl-1221", { opacity: 0, duration: 0.15, ease: "power2.in" }, 8.83);
-        tl.set("#pl-1221", { visibility: "hidden" }, 8.98);
-        tl.set("#pl-1222", { visibility: "visible" }, 9.05);
-        tl.fromTo("#pl-1222", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 9.05);
-        tl.to("#pl-1222", { opacity: 0, duration: 0.15, ease: "power2.in" }, 10.23);
-        tl.set("#pl-1222", { visibility: "hidden" }, 10.38);
-        tl.set("#pl-1223", { visibility: "visible" }, 10.45);
-        tl.fromTo("#pl-1223", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 10.45);
-        tl.to("#pl-1223", { opacity: 0, duration: 0.15, ease: "power2.in" }, 11.63);
-        tl.set("#pl-1223", { visibility: "hidden" }, 11.78);
-        tl.set("#pl-1225", { visibility: "visible" }, 11.85);
-        tl.fromTo("#pl-1225", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 11.85);
-        tl.to("#pl-1225", { opacity: 0, duration: 0.15, ease: "power2.in" }, 13.03);
-        tl.set("#pl-1225", { visibility: "hidden" }, 13.18);
-        tl.set("#pl-1226", { visibility: "visible" }, 13.25);
-        tl.fromTo("#pl-1226", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 13.25);
-        tl.to("#pl-1226", { opacity: 0, duration: 0.15, ease: "power2.in" }, 14.43);
-        tl.set("#pl-1226", { visibility: "hidden" }, 14.58);
-        tl.set("#pl-1228", { visibility: "visible" }, 14.65);
-        tl.fromTo("#pl-1228", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 14.65);
-        tl.to("#pl-1228", { opacity: 0, duration: 0.15, ease: "power2.in" }, 17.43);
-        tl.set("#pl-1228", { visibility: "hidden" }, 17.58);
-        tl.set("#pl-1229", { visibility: "visible" }, 17.65);
-        tl.fromTo("#pl-1229", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 17.65);
-        tl.to("#pl-1229", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.62);
-        tl.set("#pl-1229", { visibility: "hidden" }, 18.77);
-        tl.set("#st-hoki", { visibility: "visible" }, 21.29);
-        tl.fromTo("#st-hoki", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 21.29);
-        tl.to("#st-hoki", { opacity: 0, duration: 0.2, ease: "power2.in" }, 23.74);
-        tl.set("#st-hoki", { visibility: "hidden" }, 23.94);
-        tl.set("#st-3k", { visibility: "visible" }, 28.84);
-        tl.fromTo("#st-3k", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 28.84);
-        tl.to("#st-3k", { opacity: 0, duration: 0.2, ease: "power2.in" }, 31.31);
-        tl.set("#st-3k", { visibility: "hidden" }, 31.51);
-        tl.set("#ch-sosial", { visibility: "visible" }, 31.76);
-        tl.fromTo("#ch-sosial", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 31.76);
-        tl.to("#ch-sosial", { opacity: 0, duration: 0.15, ease: "power2.in" }, 41.25);
-        tl.set("#ch-sosial", { visibility: "hidden" }, 41.40);
-        tl.set("#st-gaji", { visibility: "visible" }, 44.50);
-        tl.fromTo("#st-gaji", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 44.50);
-        tl.to("#st-gaji", { opacity: 0, duration: 0.2, ease: "power2.in" }, 51.61);
-        tl.set("#st-gaji", { visibility: "hidden" }, 51.81);
-        tl.set("#st-naik", { visibility: "visible" }, 55.86);
-        tl.fromTo("#st-naik", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 55.86);
-        tl.to("#st-naik", { opacity: 0, duration: 0.2, ease: "power2.in" }, 61.20);
-        tl.set("#st-naik", { visibility: "hidden" }, 61.40);
-        tl.set("#st-komp", { visibility: "visible" }, 66.45);
-        tl.fromTo("#st-komp", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 66.45);
-        tl.to("#st-komp", { opacity: 0, duration: 0.2, ease: "power2.in" }, 71.46);
-        tl.set("#st-komp", { visibility: "hidden" }, 71.66);
-        tl.set("#ch-pelawa", { visibility: "visible" }, 72.01);
-        tl.fromTo("#ch-pelawa", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 72.01);
-        tl.to("#ch-pelawa", { opacity: 0, duration: 0.15, ease: "power2.in" }, 79.57);
-        tl.set("#ch-pelawa", { visibility: "hidden" }, 79.72);
-        tl.set("#yt-para", { visibility: "visible" }, 14.80);
-        tl.fromTo("#yt-para", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 14.80);
-        tl.to("#yt-para", { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, 17.35);
-        tl.set("#yt-para", { visibility: "hidden" }, 17.55);
-        tl.set("#yt-cheah", { visibility: "visible" }, 23.99);
-        tl.fromTo("#yt-cheah", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 23.99);
-        tl.to("#yt-cheah", { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, 28.59);
-        tl.set("#yt-cheah", { visibility: "hidden" }, 28.79);
-        tl.set("#ch-cheah", { visibility: "visible" }, 23.99);
-        tl.fromTo("#ch-cheah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 23.99);
-        tl.to("#ch-cheah", { opacity: 0, duration: 0.15, ease: "power2.in" }, 28.64);
-        tl.set("#ch-cheah", { visibility: "hidden" }, 28.79);
-        tl.set("#end", { visibility: "visible" }, 84.45);
-        tl.fromTo("#end", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 84.45);
+        tl.fromTo(".L", { opacity: 0, y: 60, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, stagger: 0.02, ease: "back.out(2)" }, 0);
+        tl.fromTo("#hook-kicker", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 0.25);
+        tl.fromTo("#hook-sub", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)" }, 0.5);
+        tl.to("#hook-big", { scale: 1.07, duration: 3.8, ease: "sine.inOut" }, 0.6);
+        tl.to(["#hook", "#scrim"], { opacity: 0, duration: 0.2, ease: "power2.in" }, 4.63);
+        tl.set(["#hook", "#scrim"], { visibility: "hidden" }, 4.83);
+        tl.set("#ch-majlis", { visibility: "visible" }, 7.68);
+        tl.fromTo("#ch-majlis", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 7.68);
+        tl.to("#ch-majlis", { opacity: 0, duration: 0.15, ease: "power2.in" }, 9.23);
+        tl.set("#ch-majlis", { visibility: "hidden" }, 9.38);
+        tl.set("#para-badge", { visibility: "visible" }, 9.40);
+        tl.fromTo("#para-badge", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 9.40);
+        tl.to("#para-badge", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.16);
+        tl.set("#para-badge", { visibility: "hidden" }, 18.31);
+        tl.set("#para-frame", { visibility: "visible" }, 9.40);
+        tl.fromTo("#para-frame", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 9.40);
+        tl.to("#para-frame", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.16);
+        tl.set("#para-frame", { visibility: "hidden" }, 18.31);
+        tl.set("#pl-1219", { visibility: "visible" }, 9.45);
+        tl.fromTo("#pl-1219", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 9.45);
+        tl.to("#pl-1219", { opacity: 0, duration: 0.15, ease: "power2.in" }, 11.23);
+        tl.set("#pl-1219", { visibility: "hidden" }, 11.38);
+        tl.set("#pl-1228", { visibility: "visible" }, 15.65);
+        tl.fromTo("#pl-1228", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 15.65);
+        tl.to("#pl-1228", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.14);
+        tl.set("#pl-1228", { visibility: "hidden" }, 18.29);
+        tl.set("#pc0", { visibility: "visible" }, 18.31);
+        tl.fromTo("#pc0", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.22, ease: "expo.out" }, 18.31);
+        tl.fromTo("#pc0 .pc-num", { scale: 2.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 18.36);
+        tl.fromTo("#pc0 .pc-title", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, 18.43);
+        tl.fromTo("#pc0 .pc-sub", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, 18.51);
+        tl.to("#pc0", { opacity: 0, y: -520, scale: 0.5, duration: 0.3, ease: "power2.in" }, 19.81);
+        tl.set("#pc0", { visibility: "hidden" }, 20.11);
+        tl.set("#pp0", { visibility: "visible" }, 20.01);
+        tl.fromTo("#pp0", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 20.01);
+        tl.to("#pp0", { opacity: 0, duration: 0.15, ease: "power2.in" }, 31.23);
+        tl.set("#pp0", { visibility: "hidden" }, 31.38);
+        tl.set("#pc1", { visibility: "visible" }, 31.43);
+        tl.fromTo("#pc1", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.22, ease: "expo.out" }, 31.43);
+        tl.fromTo("#pc1 .pc-num", { scale: 2.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 31.48);
+        tl.fromTo("#pc1 .pc-title", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, 31.55);
+        tl.fromTo("#pc1 .pc-sub", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, 31.63);
+        tl.to("#pc1", { opacity: 0, y: -520, scale: 0.5, duration: 0.3, ease: "power2.in" }, 32.93);
+        tl.set("#pc1", { visibility: "hidden" }, 33.23);
+        tl.set("#pp1", { visibility: "visible" }, 33.13);
+        tl.fromTo("#pp1", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 33.13);
+        tl.to("#pp1", { opacity: 0, duration: 0.15, ease: "power2.in" }, 66.50);
+        tl.set("#pp1", { visibility: "hidden" }, 66.65);
+        tl.set("#pc2", { visibility: "visible" }, 66.70);
+        tl.fromTo("#pc2", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.22, ease: "expo.out" }, 66.70);
+        tl.fromTo("#pc2 .pc-num", { scale: 2.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 66.75);
+        tl.fromTo("#pc2 .pc-title", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, 66.82);
+        tl.fromTo("#pc2 .pc-sub", { x: 80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, 66.90);
+        tl.to("#pc2", { opacity: 0, y: -520, scale: 0.5, duration: 0.3, ease: "power2.in" }, 68.20);
+        tl.set("#pc2", { visibility: "hidden" }, 68.50);
+        tl.set("#pp2", { visibility: "visible" }, 68.40);
+        tl.fromTo("#pp2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.25, ease: "power3.out" }, 68.40);
+        tl.to("#pp2", { opacity: 0, duration: 0.15, ease: "power2.in" }, 83.20);
+        tl.set("#pp2", { visibility: "hidden" }, 83.35);
+        tl.set("#st-hoki", { visibility: "visible" }, 20.21);
+        tl.fromTo("#st-hoki", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 20.21);
+        tl.to("#st-hoki", { opacity: 0, duration: 0.15, ease: "power2.in" }, 24.21);
+        tl.set("#st-hoki", { visibility: "hidden" }, 24.36);
+        tl.set("#yt-cheah", { visibility: "visible" }, 24.51);
+        tl.fromTo("#yt-cheah", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 24.51);
+        tl.to("#yt-cheah", { opacity: 0, duration: 0.15, ease: "power2.in" }, 27.71);
+        tl.set("#yt-cheah", { visibility: "hidden" }, 27.86);
+        tl.set("#ch-cheah", { visibility: "visible" }, 24.51);
+        tl.fromTo("#ch-cheah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 24.51);
+        tl.to("#ch-cheah", { opacity: 0, duration: 0.15, ease: "power2.in" }, 27.71);
+        tl.set("#ch-cheah", { visibility: "hidden" }, 27.86);
+        tl.set("#st-3k", { visibility: "visible" }, 28.06);
+        tl.fromTo("#st-3k", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 28.06);
+        tl.to("#st-3k", { opacity: 0, duration: 0.15, ease: "power2.in" }, 31.23);
+        tl.set("#st-3k", { visibility: "hidden" }, 31.38);
+        tl.set("#yt-para", { visibility: "visible" }, 15.75);
+        tl.fromTo("#yt-para", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 15.75);
+        tl.to("#yt-para", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.11);
+        tl.set("#yt-para", { visibility: "hidden" }, 18.26);
+        tl.set("#st-gaji", { visibility: "visible" }, 35.53);
+        tl.fromTo("#st-gaji", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 35.53);
+        tl.to("#st-gaji", { opacity: 0, duration: 0.15, ease: "power2.in" }, 38.94);
+        tl.set("#st-gaji", { visibility: "hidden" }, 39.09);
+        tl.set("#st-naik", { visibility: "visible" }, 43.14);
+        tl.fromTo("#st-naik", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 43.14);
+        tl.to("#st-naik", { opacity: 0, duration: 0.15, ease: "power2.in" }, 48.48);
+        tl.set("#st-naik", { visibility: "hidden" }, 48.63);
+        tl.set("#st-komp", { visibility: "visible" }, 53.48);
+        tl.fromTo("#st-komp", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 53.48);
+        tl.to("#st-komp", { opacity: 0, duration: 0.15, ease: "power2.in" }, 58.69);
+        tl.set("#st-komp", { visibility: "hidden" }, 58.84);
+        tl.set("#ch-pelawa", { visibility: "visible" }, 59.19);
+        tl.fromTo("#ch-pelawa", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 59.19);
+        tl.to("#ch-pelawa", { opacity: 0, duration: 0.15, ease: "power2.in" }, 66.50);
+        tl.set("#ch-pelawa", { visibility: "hidden" }, 66.65);
+        tl.set("#bw-ola", { visibility: "visible" }, 68.00);
+        tl.fromTo("#bw-ola", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.28, ease: "expo.out" }, 68.00);
+        tl.to("#bw-ola", { opacity: 0, duration: 0.15, ease: "power2.in" }, 69.87);
+        tl.set("#bw-ola", { visibility: "hidden" }, 70.02);
+        tl.set("#bw-sil", { visibility: "visible" }, 70.04);
+        tl.fromTo("#bw-sil", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.28, ease: "expo.out" }, 70.04);
+        tl.to("#bw-sil", { opacity: 0, duration: 0.15, ease: "power2.in" }, 71.25);
+        tl.set("#bw-sil", { visibility: "hidden" }, 71.40);
+        tl.set("#bw-ang", { visibility: "visible" }, 71.42);
+        tl.fromTo("#bw-ang", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.28, ease: "expo.out" }, 71.42);
+        tl.to("#bw-ang", { opacity: 0, duration: 0.15, ease: "power2.in" }, 73.23);
+        tl.set("#bw-ang", { visibility: "hidden" }, 73.38);
+        tl.set("#jaguh", { visibility: "visible" }, 73.50);
+        tl.fromTo("#jaguh", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" }, 73.50);
+        tl.to("#jaguh", { opacity: 0, duration: 0.15, ease: "power2.in" }, 76.80);
+        tl.set("#jaguh", { visibility: "hidden" }, 76.95);
+        tl.fromTo("#jaguh .jg-list span", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.12, ease: "power3.out" }, 73.60);
+        tl.set("#bw-gem", { visibility: "visible" }, 80.72);
+        tl.fromTo("#bw-gem", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.28, ease: "expo.out" }, 80.72);
+        tl.to("#bw-gem", { opacity: 0, duration: 0.15, ease: "power2.in" }, 83.23);
+        tl.set("#bw-gem", { visibility: "hidden" }, 83.38);
         window.__timelines = window.__timelines || {};
         window.__timelines["gfx"] = tl;
       </script>

@@ -8,22 +8,30 @@ W = json.load(open(WORDS))
 
 # Kept source spans (seconds); every word whose start lies in a span is kept.
 # Each chunk = one thought; chunks are separated by a short breath.
+# (spans, gap_after_seconds). Longer gaps = room for a whoosh + point card.
 CHUNKS = [
-  [(78.3, 86.65)],                                    # Pahang negeri pertama salurkan insentif kepada atlet-atlet Pahang
-  [(100.15, 113.8)],                                  # Hari ini kita sampaikan pula insentif ... SUKMA dan Para SUKMA baru-baru ini
-  [(150.9, 153.95), (154.45, 161.6)],                  # Untuk sukan hoki dan sukan menembak, pencapaian Pahang sebagai juara keseluruhan
-  [(248.3, 250.0), (253.5, 257.0)],                  # Kita naikkan kadar ... daripada 2,000 kita tambah 1,000, jadi 3,000
-  [(277.7, 281.75), (285.40, 289.75), (290.30, 293.2)],  # Saya dapat cadangan ini di media sosial ... boleh dilaksanakan. Sebab tu kita naikkan
-  [(312.7, 317.75), (324.20, 327.05)],                  # Pahang dah naikkan kadar gaji minimum jurulatih, untuk jurulatih sepenuh masa 2,200
-  [(328.0, 330.6), (331.6, 333.5)],                  # Pada Januari ni akan buat pelarasan gaji
-  [(443.12, 445.75), (446.5, 455.0)],                  # Dengan pelarasan gaji baru ni, mereka akan menerima kenaikan antara RM200 kepada RM1,200
-  [(498.25, 505.1), (505.8, 508.15), (509.95, 513.25)],  # Kadar gaji jurulatih ... bermula Januari 2027 sangat kompetitif, tinggi berbanding negeri lain
-  [(516.2, 520.0), (520.6, 523.7), (523.75, 524.6), (526.4, 527.3), (529.1, 532.4)],  # Saya nak pelawa jurulatih di luar sana yang berkelayakan, berkemahiran, cuba cari rezeki di Pahang
-  [(590.1, 594.2), (595.0, 596.5)],                  # Bermula Januari ni kita nak buat transformasi sukan di negeri Pahang
+  # HOOK - transformasi
+  ([(590.1, 594.2), (595.0, 596.5)], 2.90),                    # Bermula Januari ini kita nak buat transformasi sukan di negeri Pahang
+  # (cartoon card plays in this gap)
+  ([(100.15, 101.98), (102.18, 112.88)], 0.70),                # Hari ini kita sampaikan insentif kepada atlet-atlet Pahang yang cemerlang di SUKMA dan Para SUKMA
+  # POINT 1 - insentif hoki & menembak naik RM1,000
+  ([(150.9, 153.95), (154.45, 161.6)], 0.25),                  # Untuk sukan hoki dan sukan menembak, pencapaian Pahang sebagai juara keseluruhan
+  ([(248.3, 250.0), (253.5, 257.0)], 0.70),                    # Kita naikkan kadar itu daripada 2,000 kita tambah 1,000 jadi 3,000
+  # POINT 2 - gaji baharu jurulatih Januari 2027, kompetitif
+  ([(312.7, 317.75), (324.20, 327.05)], 0.25),                 # Pahang dah naikkan kadar gaji minimum jurulatih, untuk jurulatih sepenuh masa 2,200
+  ([(443.12, 445.75), (446.5, 455.0)], 0.25),                  # Dengan pelarasan gaji baru ini mereka akan menerima kenaikan antara RM200 kepada RM1,200
+  ([(498.25, 505.1), (505.8, 508.15), (509.95, 513.25)], 0.25),  # Kadar gaji jurulatih ... bermula Januari 2027 sangat kompetitif, tinggi berbanding negeri lain
+  ([(516.2, 520.0), (520.6, 523.7), (523.75, 524.6), (526.4, 527.3), (529.1, 532.4)], 0.70),  # Saya nak pelawa jurulatih di luar sana ... cari rezeki di Pahang
+  # POINT 3 - tambah jurulatih olahraga, silat, angkat berat
+  ([(732.0, 733.15), (734.5, 736.2)], 0.20),                   # Saya nak cari jurulatih olahraga
+  ([(736.5, 738.25)], 0.20),                                    # Yang kedua silat
+  ([(739.6, 742.4)], 0.25),                                    # Yang ketiga angkat berat
+  ([(748.05, 749.35), (750.3, 759.5)], 0.25),                  # Sebab untuk olahraga, silat dan angkat berat, Pahang satu ketika adalah jaguh untuk sukan ini
+  ([(760.2, 762.8)], 0.30),                                    # Saya nak kembalikan kegemilangan itu
 ]
 
 FIX = {"selalukan":"salurkan","julatih":"jurulatih","dipahang":"di Pahang","sukma":"SUKMA",
-       "kesuruhan":"keseluruhan","social":"sosial","ni":"ini","tu":"itu","1200":"1,200"}
+       "kesuruhan":"keseluruhan","kemilangan":"kegemilangan","social":"sosial","ni":"ini","tu":"itu","1200":"1,200"}
 
 wf = wave.open(SRC16); sr = wf.getframerate()
 a = np.frombuffer(wf.readframes(wf.getnframes()), dtype=np.int16).astype(np.float32) / 32768
@@ -74,7 +82,7 @@ def compress(s, e):
 FIX_TOKENS = lambda ws: ws
 pieces, words_out, chunk_bounds = [], [], []
 t = 0.0
-for ci, spans in enumerate(CHUNKS):
+for ci, (spans, gap) in enumerate(CHUNKS):
   c0 = t
   for (sa, sb) in spans:
     a, b = snap(sa), snap(sb)
@@ -100,7 +108,7 @@ for ci, spans in enumerate(CHUNKS):
     for pa, pb in parts:
       pieces.append((pa, pb)); t += pb - pa
   chunk_bounds.append([round(c0, 3), round(t, 3)])
-  t += BREATH; pieces.append(("gap", BREATH))
+  t += gap; pieces.append(("gap", gap))
 
 # render with ffmpeg: trim each piece from full-quality source, short fades, concat
 flt, labels = [], []
@@ -114,7 +122,16 @@ for i, p in enumerate(pieces):
 flt.append("".join(labels) + f"concat=n={len(labels)}:v=0:a=1,highpass=f=80,acompressor=threshold=-20dB:ratio=3,loudnorm=I=-16:TP=-1.5[out]")
 open(f"{OUT_DIR}/voice_filter.txt", "w").write(";\n".join(flt))
 subprocess.run(["ffmpeg","-v","error","-y","-i",SRC_FULL,"-filter_complex_script",f"{OUT_DIR}/voice_filter.txt","-map","[out]","-ar","48000","-ac","2",f"{OUT_DIR}/voice_edit.wav"], check=True)
-json.dump({"duration": round(t - BREATH, 3), "chunks": chunk_bounds, "words": words_out}, open(f"{OUT_DIR}/voice_words.json","w"), ensure_ascii=False, indent=1)
-print("duration", round(t - BREATH, 2))
+# caption text overrides where whisper's words are wrong (spread by length over the chunk)
+OVR = {8: "Saya nak cari jurulatih olahraga"}
+for ci, txt in OVR.items():
+  c0, c1 = chunk_bounds[ci]; toks = txt.split(); tot = sum(len(x) for x in toks); acc = c0
+  words_out = [w for w in words_out if w["chunk"] != ci]
+  for x in toks:
+    d_ = (c1 - c0) * len(x) / tot
+    words_out.append({"text": x, "start": round(acc, 3), "end": round(acc + d_ * 0.9, 3), "chunk": ci}); acc += d_
+words_out.sort(key=lambda w: w["start"])
+json.dump({"duration": round(t - gap, 3), "chunks": chunk_bounds, "words": words_out}, open(f"{OUT_DIR}/voice_words.json","w"), ensure_ascii=False, indent=1)
+print("duration", round(t - gap, 2))
 for ci,(a,b) in enumerate(chunk_bounds):
   print(ci, a, b, " ".join(w["text"] for w in words_out if w["chunk"]==ci))
