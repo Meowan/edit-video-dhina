@@ -1,0 +1,538 @@
+{
+ "total": 87.15,
+ "shots": [
+  {
+   "clip": "IMG_1277",
+   "start": 0.0,
+   "dur": 2.1,
+   "ms": 0.6,
+   "tag": "hook",
+   "srclen": 4.333333
+  },
+  {
+   "clip": "IMG_1200",
+   "start": 2.1,
+   "dur": 1.8,
+   "ms": 0.8,
+   "tag": "hook",
+   "srclen": 4.5
+  },
+  {
+   "clip": "IMG_1219",
+   "start": 3.9,
+   "dur": 2.3,
+   "ms": 2.2,
+   "tag": "para",
+   "srclen": 9.266667
+  },
+  {
+   "clip": "IMG_1220",
+   "start": 6.2,
+   "dur": 1.4,
+   "ms": 4.0,
+   "tag": "para",
+   "srclen": 12.9
+  },
+  {
+   "clip": "IMG_1221",
+   "start": 7.6,
+   "dur": 1.4,
+   "ms": 6.0,
+   "tag": "para",
+   "srclen": 18.166667
+  },
+  {
+   "clip": "IMG_1222",
+   "start": 9.0,
+   "dur": 1.4,
+   "ms": 2.5,
+   "tag": "para",
+   "srclen": 7.8
+  },
+  {
+   "clip": "IMG_1223",
+   "start": 10.4,
+   "dur": 1.4,
+   "ms": 5.0,
+   "tag": "para",
+   "srclen": 14.1
+  },
+  {
+   "clip": "IMG_1225",
+   "start": 11.8,
+   "dur": 1.4,
+   "ms": 1.0,
+   "tag": "para",
+   "srclen": 4.5
+  },
+  {
+   "clip": "IMG_1226",
+   "start": 13.2,
+   "dur": 1.4,
+   "ms": 3.0,
+   "tag": "para",
+   "srclen": 8.3
+  },
+  {
+   "clip": "IMG_1228",
+   "start": 14.6,
+   "dur": 3.0,
+   "ms": 17.0,
+   "tag": "para",
+   "srclen": 34.5
+  },
+  {
+   "clip": "IMG_1229",
+   "start": 17.6,
+   "dur": 1.19,
+   "ms": 1.5,
+   "tag": "para",
+   "srclen": 6.2
+  },
+  {
+   "clip": "IMG_1257",
+   "start": 18.79,
+   "dur": 2.45,
+   "ms": 1.5,
+   "tag": "prize",
+   "srclen": 5.8
+  },
+  {
+   "clip": "IMG_1260",
+   "start": 21.24,
+   "dur": 2.45,
+   "ms": 1.0,
+   "tag": "prize",
+   "srclen": 4.633333
+  },
+  {
+   "clip": "IMG_1262",
+   "start": 23.69,
+   "dur": 2.7,
+   "ms": 2.5,
+   "tag": "prize",
+   "srclen": 8.5
+  },
+  {
+   "clip": "IMG_1263",
+   "start": 26.39,
+   "dur": 5.17,
+   "ms": 22.0,
+   "tag": "prize",
+   "srclen": 53.133333
+  },
+  {
+   "clip": "IMG_1296",
+   "start": 31.56,
+   "dur": 2.6,
+   "ms": 2.0,
+   "tag": "mesra",
+   "srclen": 11.1
+  },
+  {
+   "clip": "IMG_1197",
+   "start": 34.16,
+   "dur": 2.4,
+   "ms": 1.0,
+   "tag": "mesra",
+   "srclen": 6.466667
+  },
+  {
+   "clip": "IMG_1215a",
+   "start": 36.56,
+   "dur": 2.4,
+   "ms": 3.0,
+   "tag": "prize",
+   "srclen": 10.2
+  },
+  {
+   "clip": "IMG_1216",
+   "start": 38.96,
+   "dur": 2.54,
+   "ms": 2.5,
+   "tag": "prize",
+   "srclen": 7.5
+  },
+  {
+   "clip": "IMG_1217",
+   "start": 41.5,
+   "dur": 2.5,
+   "ms": 1.5,
+   "tag": "prize",
+   "srclen": 5.633333
+  },
+  {
+   "clip": "IMG_1231",
+   "start": 44.0,
+   "dur": 2.3,
+   "ms": 0.2,
+   "tag": "prize",
+   "srclen": 2.666667
+  },
+  {
+   "clip": "IMG_1232",
+   "start": 46.3,
+   "dur": 2.26,
+   "ms": 2.5,
+   "tag": "prize",
+   "srclen": 7.6
+  },
+  {
+   "clip": "IMG_1233",
+   "start": 48.56,
+   "dur": 1.6,
+   "ms": 1.0,
+   "tag": "prize",
+   "srclen": 4.1
+  },
+  {
+   "clip": "IMG_1234",
+   "start": 50.16,
+   "dur": 1.7,
+   "ms": 5.0,
+   "tag": "prize",
+   "srclen": 11.166667
+  },
+  {
+   "clip": "IMG_1236",
+   "start": 51.86,
+   "dur": 2.3,
+   "ms": 1.0,
+   "tag": "prize",
+   "srclen": 4.633333
+  },
+  {
+   "clip": "IMG_1238",
+   "start": 54.16,
+   "dur": 2.1,
+   "ms": 0.0,
+   "tag": "prize",
+   "srclen": 1.866667
+  },
+  {
+   "clip": "IMG_1240",
+   "start": 56.26,
+   "dur": 2.2,
+   "ms": 0.08,
+   "tag": "prize",
+   "srclen": 2.333333
+  },
+  {
+   "clip": "IMG_1241",
+   "start": 58.46,
+   "dur": 2.99,
+   "ms": 0.0,
+   "tag": "prize",
+   "srclen": 3.0
+  },
+  {
+   "clip": "IMG_1242",
+   "start": 61.45,
+   "dur": 2.5,
+   "ms": 2.0,
+   "tag": "prize",
+   "srclen": 6.8
+  },
+  {
+   "clip": "IMG_1243",
+   "start": 63.95,
+   "dur": 2.4,
+   "ms": 1.0,
+   "tag": "prize",
+   "srclen": 4.266667
+  },
+  {
+   "clip": "IMG_1244",
+   "start": 66.35,
+   "dur": 2.4,
+   "ms": 0.4,
+   "tag": "prize",
+   "srclen": 3.166667
+  },
+  {
+   "clip": "IMG_1245",
+   "start": 68.75,
+   "dur": 2.96,
+   "ms": 0.8,
+   "tag": "prize",
+   "srclen": 3.933333
+  },
+  {
+   "clip": "IMG_1246",
+   "start": 71.71,
+   "dur": 2.7,
+   "ms": 1.0,
+   "tag": "prize",
+   "srclen": 4.9
+  },
+  {
+   "clip": "IMG_1247",
+   "start": 74.41,
+   "dur": 2.6,
+   "ms": 1.5,
+   "tag": "prize",
+   "srclen": 5.366667
+  },
+  {
+   "clip": "IMG_1248",
+   "start": 77.01,
+   "dur": 2.81,
+   "ms": 0.8,
+   "tag": "prize",
+   "srclen": 4.2
+  },
+  {
+   "clip": "IMG_1266",
+   "start": 79.82,
+   "dur": 7.33,
+   "ms": 3.0,
+   "tag": "end",
+   "srclen": 18.166667
+  }
+ ],
+ "groups": [
+  [
+   "Pahang",
+   "negeri",
+   "pertama"
+  ],
+  [
+   "yang",
+   "salurkan",
+   "insentif"
+  ],
+  [
+   "kepada",
+   "atlet-atlet",
+   "Pahang"
+  ],
+  [
+   "Hari",
+   "ini",
+   "kita"
+  ],
+  [
+   "sampaikan",
+   "pula",
+   "insentif"
+  ],
+  [
+   "kepada",
+   "atlet-atlet",
+   "Pahang"
+  ],
+  [
+   "yang",
+   "cemerlang",
+   "di"
+  ],
+  [
+   "SUKMA",
+   "dan",
+   "Para"
+  ],
+  [
+   "SUKMA",
+   "baru-baru",
+   "ini"
+  ],
+  [
+   "Untuk",
+   "sukan",
+   "hoki"
+  ],
+  [
+   "dan",
+   "sukan",
+   "menembak"
+  ],
+  [
+   "pencapaian",
+   "Pahang",
+   "sebagai"
+  ],
+  [
+   "juara",
+   "keseluruhan"
+  ],
+  [
+   "Kita",
+   "naikkan",
+   "kadar"
+  ],
+  [
+   "itu",
+   "daripada",
+   "RM2,000"
+  ],
+  [
+   "kita",
+   "tambah",
+   "RM1,000"
+  ],
+  [
+   "jadi",
+   "RM3,000"
+  ],
+  [
+   "Saya",
+   "dapat",
+   "cadangan"
+  ],
+  [
+   "ini",
+   "di",
+   "media"
+  ],
+  [
+   "sosial",
+   "bila",
+   "kita"
+  ],
+  [
+   "perhalusi",
+   "ianya",
+   "boleh"
+  ],
+  [
+   "dilaksanakan",
+   "sebab",
+   "itu"
+  ],
+  [
+   "kita",
+   "naikkan"
+  ],
+  [
+   "Pahang",
+   "dah",
+   "naikkan"
+  ],
+  [
+   "kadar",
+   "gaji",
+   "minimum"
+  ],
+  [
+   "jurulatih",
+   "untuk",
+   "jurulatih"
+  ],
+  [
+   "sepenuh",
+   "masa",
+   "di pahang"
+  ],
+  [
+   "RM2,200"
+  ],
+  [
+   "Pada",
+   "januari",
+   "ini"
+  ],
+  [
+   "akan",
+   "buat",
+   "pelarasan"
+  ],
+  [
+   "gaji"
+  ],
+  [
+   "Dengan",
+   "pelarasan",
+   "gaji"
+  ],
+  [
+   "baru",
+   "ini",
+   "mereka"
+  ],
+  [
+   "akan",
+   "menerima",
+   "kenaikan"
+  ],
+  [
+   "antara",
+   "RM200"
+  ],
+  [
+   "kepada",
+   "RM1,200"
+  ],
+  [
+   "Kadar",
+   "gaji",
+   "jurulatih"
+  ],
+  [
+   "penuh",
+   "masa",
+   "di pahang"
+  ],
+  [
+   "bermula",
+   "januari",
+   "2027"
+  ],
+  [
+   "sangat",
+   "kompetitif",
+   "tinggi"
+  ],
+  [
+   "berbanding",
+   "negeri-negeri",
+   "lain"
+  ],
+  [
+   "Saya",
+   "nak",
+   "pelawa"
+  ],
+  [
+   "jurulatih",
+   "di",
+   "luar"
+  ],
+  [
+   "sana",
+   "yang",
+   "memang"
+  ],
+  [
+   "berkelayakan",
+   "berkemahiran",
+   "cuba"
+  ],
+  [
+   "cari",
+   "rezeki",
+   "di"
+  ],
+  [
+   "Pahang"
+  ],
+  [
+   "Bermula",
+   "januari",
+   "ini"
+  ],
+  [
+   "kita",
+   "nak",
+   "buat"
+  ],
+  [
+   "transformasi",
+   "sukan",
+   "di"
+  ],
+  [
+   "negeri",
+   "Pahang"
+  ]
+ ]
+}
