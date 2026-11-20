@@ -1,4 +1,4 @@
 node_modules/
 video/.hyperframes/
 video/assets/clips/
-*.mp4
+render/

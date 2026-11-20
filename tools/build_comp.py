@@ -89,11 +89,11 @@ PARA_LABELS = {"IMG_1219": "LOH CHI HUI · ASIAN PARA GAMES", "IMG_1220": "PARA 
                "IMG_1222": "PARA PINGPONG", "IMG_1223": "PARA RENANG", "IMG_1225": "PARA OLAHRAGA",
                "IMG_1226": "PARA TENPIN BOLING", "IMG_1228": "PARA MEMANAH", "IMG_1229": "PARA BOLING PADANG"}
 
-YT = [  # YouTube overlays (draft: thumbnail placeholder; final: the athlete's clip)
-  dict(id="yt-para", over="IMG_1228", img="assets/yt/GSWjWHTr2jk.jpg",
-       credit="▶ YouTube · Para Memanah", vid="GSWjWHTr2jk"),
-  dict(id="yt-cheah", over="IMG_1263", img="assets/yt/QD7LSACwdCY.jpg",
-       credit="▶ YouTube · Pecah rekod SUKMA", vid="QD7LSACwdCY"),
+YT = [  # YouTube overlays (clips supplied by the client via Drive)
+  dict(id="yt-para", over="IMG_1228", src="assets/yt/memanah_para.mp4",
+       credit="▶ Para SUKMA · Para Recurve · Pahang vs Sabah"),
+  dict(id="yt-cheah", over="IMG_1262", src="assets/yt/cheah_shoot.mp4",
+       credit=""),
 ]
 
 def shot(c): return next(s for s in shots if s["clip"] == c)
@@ -128,6 +128,8 @@ index = f'''<!doctype html>
     <div id="root" data-composition-id="main" data-start="0" data-duration="{TOTAL}" data-width="{W}" data-height="{H}" data-fps="30">
 {chr(10).join(vids)}
       <audio id="voice" class="clip" src="assets/audio/voice_edit.wav" data-start="{VO}" data-duration="{VOICE['duration']}" data-volume="1" data-track-index="3"></audio>
+      <audio id="music" class="clip" src="assets/audio/music.wav" data-start="0" data-duration="{TOTAL}" data-volume="1" data-fade-out="1.6" data-track-index="2"
+        data-automation='{{"version":1,"lanes":[{{"target":"volume","points":[{{"t":0,"v":0.85}},{{"t":0.45,"v":0.26}},{{"t":{VOICE_END:.2f},"v":0.26}},{{"t":{VOICE_END+0.5:.2f},"v":0.8}}]}}]}}'></audio>
       <div id="gfx" class="clip host" data-composition-id="gfx" data-composition-src="compositions/overlays.html" data-start="0" data-duration="{TOTAL}" data-track-index="4" data-track-kind="graphics"></div>
       <div id="caps" class="clip host" data-composition-id="caps" data-composition-src="compositions/captions.html" data-start="0" data-duration="{TOTAL}" data-track-index="5" data-track-kind="captions"></div>
     </div>
@@ -261,7 +263,7 @@ def stat(id_, top, big, sub, s, e):
     o_js.append(f'        tl.to("#{id_}", {{ opacity: 0, duration: 0.2, ease: "power2.in" }}, {e-0.2:.2f});')
     o_js.append(f'        tl.set("#{id_}", {{ visibility: "hidden" }}, {e:.2f});')
 
-stat("st-hoki", "HOKI &amp; MENEMBAK", "JUARA", "keseluruhan SUKMA 2026", ch(2) + 3.2, ch(3))
+stat("st-hoki", "HOKI &amp; MENEMBAK", "JUARA", "keseluruhan SUKMA 2026", ch(2) + 2.5, shot("IMG_1262")["start"] + 0.25)
 stat("st-3k", "INSENTIF SETIAP ATLET", "RM2,000 → <b>RM3,000</b>", "hoki &amp; menembak", ch(3) + 2.45, ch(4) - 0.05)
 chip("ch-sosial", "CADANGAN ATLET DI MEDIA SOSIAL — DILAKSANAKAN", ch(4) + 0.2, ch(5) - 0.1, "chip gold")
 stat("st-gaji", "GAJI MINIMUM JURULATIH SEPENUH MASA", "RM2,200", "pelarasan gaji mulai Januari 2027", ch(5) + 3.0, ch(7) - 0.05)
@@ -270,25 +272,28 @@ stat("st-komp", "MULAI JANUARI 2027", "KOMPETITIF", "lebih tinggi berbanding neg
 chip("ch-pelawa", "JURULATIH BERKELAYAKAN? CARI REZEKI DI PAHANG", ch(9) + 0.3, ch(10) - 0.1, "chip gold")
 
 # YouTube overlays (picture-in-picture over the ceremony shot)
+def yt_window(y):
+    if y["id"] == "yt-cheah":
+        st = shot("IMG_1262")["start"] + 0.3
+        return st, st + 4.8
+    s_ = shot(y["over"]); return s_["start"] + 0.2, s_["start"] + s_["dur"] - 0.05
 for y in YT:
-    s = shot(y["over"])
-    ys, ye = (s["start"] + 0.15, s["start"] + 2.4) if y["over"] == "IMG_1263" else (s["start"] + 0.2, s["start"] + s["dur"] - 0.05)
+    ys, ye = yt_window(y)
     o_html.append(f'''        <div class="yt" id="{y['id']}">
-          <img class="yt-img" src="{y['img']}" alt="" />
-          <div class="yt-ph">DRAF · klip YouTube</div>
-          <div class="yt-cred">{html.escape(y['credit'])}</div>
+          <video id="{y['id']}-v" class="clip yt-img" src="{y['src']}" data-start="{ys:.2f}" data-duration="{ye-ys:.2f}" data-media-start="0" muted playsinline></video>
+          {'<div class="yt-cred">' + html.escape(y['credit']) + '</div>' if y['credit'] else ''}
         </div>''')
     o_js.append(f'        tl.set("#{y["id"]}", {{ visibility: "visible" }}, {ys:.2f});')
     o_js.append(f'        tl.fromTo("#{y["id"]}", {{ opacity: 0, y: -60, rotation: -2 }}, {{ opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }}, {ys:.2f});')
     o_js.append(f'        tl.to("#{y["id"]}", {{ opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }}, {ye-0.2:.2f});')
     o_js.append(f'        tl.set("#{y["id"]}", {{ visibility: "hidden" }}, {ye:.2f});')
-cz = shot("IMG_1263")
-chip("ch-cheah", "CHEAH ZEN HONG · ATLET LELAKI TERBAIK SUKMA 2026", cz["start"] + 0.1, cz["start"] + 2.4, "chip para")
+cs, ce = yt_window(YT[1])
+chip("ch-cheah", "CHEAH ZEN HONG · PECAH REKOD SUKMA", cs, ce, "chip para")
 
 # End card
 es = round(VOICE_END + 0.1, 2)
 o_html.append('''        <div id="end">
-          <div id="end-kicker">INSENTIF KECEMERLANGAN ATLET NEGERI PAHANG</div>
+          <div id="end-kicker">INSENTIF KECEMERLANGAN ATLET PAHANG</div>
           <div id="end-big">RM809,050</div>
           <div id="end-sub">Atlet dihargai · Jurulatih diperkasa</div>
         </div>''')
@@ -327,7 +332,7 @@ overlays = f'''<!doctype html>
         .yt-ph {{ position: absolute; left: 0; top: 0; width: 100%; padding: 10px; text-align: center; font-weight: 800; font-size: 30px; color: #111; background: rgba(255,204,31,.92); }}
         .yt-cred {{ position: absolute; left: 0; bottom: 0; width: 100%; padding: 12px 18px; font-weight: 800; font-size: 32px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.85)); }}
         #end {{ position: absolute; left: 0; width: {W}px; top: 560px; text-align: center; color: #fff; padding: 0 80px; }}
-        #end-kicker {{ font-weight: 800; font-size: 36px; letter-spacing: .06em; color: #ffcc1f; }}
+        #end-kicker {{ font-weight: 800; font-size: 30px; letter-spacing: .06em; color: #ffcc1f; }}
         #end-big {{ font-weight: 900; font-size: 150px; line-height: 1.05; margin-top: 10px; -webkit-text-stroke: 4px #111; paint-order: stroke fill; text-shadow: 0 10px 30px rgba(0,0,0,.8); }}
         #end-sub {{ font-weight: 700; font-size: 40px; margin-top: 20px; line-height: 1.25; text-shadow: 0 4px 16px rgba(0,0,0,.9); }}
       </style>

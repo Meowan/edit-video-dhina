@@ -30,7 +30,7 @@
         .yt-ph { position: absolute; left: 0; top: 0; width: 100%; padding: 10px; text-align: center; font-weight: 800; font-size: 30px; color: #111; background: rgba(255,204,31,.92); }
         .yt-cred { position: absolute; left: 0; bottom: 0; width: 100%; padding: 12px 18px; font-weight: 800; font-size: 32px; color: #fff; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
         #end { position: absolute; left: 0; width: 1080px; top: 560px; text-align: center; color: #fff; padding: 0 80px; }
-        #end-kicker { font-weight: 800; font-size: 36px; letter-spacing: .06em; color: #ffcc1f; }
+        #end-kicker { font-weight: 800; font-size: 30px; letter-spacing: .06em; color: #ffcc1f; }
         #end-big { font-weight: 900; font-size: 150px; line-height: 1.05; margin-top: 10px; -webkit-text-stroke: 4px #111; paint-order: stroke fill; text-shadow: 0 10px 30px rgba(0,0,0,.8); }
         #end-sub { font-weight: 700; font-size: 40px; margin-top: 20px; line-height: 1.25; text-shadow: 0 4px 16px rgba(0,0,0,.9); }
       </style>
@@ -60,18 +60,16 @@
         <div class="stat" id="st-komp"><div class="stat-top">MULAI JANUARI 2027</div><div class="stat-big">KOMPETITIF</div><div class="stat-sub">lebih tinggi berbanding negeri lain</div></div>
         <div class="chip gold" id="ch-pelawa"><span>JURULATIH BERKELAYAKAN? CARI REZEKI DI PAHANG</span></div>
         <div class="yt" id="yt-para">
-          <img class="yt-img" src="assets/yt/GSWjWHTr2jk.jpg" alt="" />
-          <div class="yt-ph">DRAF · klip YouTube</div>
-          <div class="yt-cred">▶ YouTube · Para Memanah</div>
+          <video id="yt-para-v" class="clip yt-img" src="assets/yt/memanah_para.mp4" data-start="14.80" data-duration="2.75" data-media-start="0" muted playsinline></video>
+          <div class="yt-cred">▶ Para SUKMA · Para Recurve · Pahang vs Sabah</div>
         </div>
         <div class="yt" id="yt-cheah">
-          <img class="yt-img" src="assets/yt/QD7LSACwdCY.jpg" alt="" />
-          <div class="yt-ph">DRAF · klip YouTube</div>
-          <div class="yt-cred">▶ YouTube · Pecah rekod SUKMA</div>
+          <video id="yt-cheah-v" class="clip yt-img" src="assets/yt/cheah_shoot.mp4" data-start="23.99" data-duration="4.80" data-media-start="0" muted playsinline></video>
+          
         </div>
-        <div class="chip para" id="ch-cheah"><span>CHEAH ZEN HONG · ATLET LELAKI TERBAIK SUKMA 2026</span></div>
+        <div class="chip para" id="ch-cheah"><span>CHEAH ZEN HONG · PECAH REKOD SUKMA</span></div>
         <div id="end">
-          <div id="end-kicker">INSENTIF KECEMERLANGAN ATLET NEGERI PAHANG</div>
+          <div id="end-kicker">INSENTIF KECEMERLANGAN ATLET PAHANG</div>
           <div id="end-big">RM809,050</div>
           <div id="end-sub">Atlet dihargai · Jurulatih diperkasa</div>
         </div>
@@ -128,10 +126,10 @@
         tl.fromTo("#pl-1229", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 17.65);
         tl.to("#pl-1229", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.62);
         tl.set("#pl-1229", { visibility: "hidden" }, 18.77);
-        tl.set("#st-hoki", { visibility: "visible" }, 21.99);
-        tl.fromTo("#st-hoki", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 21.99);
-        tl.to("#st-hoki", { opacity: 0, duration: 0.2, ease: "power2.in" }, 26.19);
-        tl.set("#st-hoki", { visibility: "hidden" }, 26.39);
+        tl.set("#st-hoki", { visibility: "visible" }, 21.29);
+        tl.fromTo("#st-hoki", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 21.29);
+        tl.to("#st-hoki", { opacity: 0, duration: 0.2, ease: "power2.in" }, 23.74);
+        tl.set("#st-hoki", { visibility: "hidden" }, 23.94);
         tl.set("#st-3k", { visibility: "visible" }, 28.84);
         tl.fromTo("#st-3k", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 28.84);
         tl.to("#st-3k", { opacity: 0, duration: 0.2, ease: "power2.in" }, 31.31);
@@ -160,12 +158,12 @@
         tl.fromTo("#yt-para", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 14.80);
         tl.to("#yt-para", { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, 17.35);
         tl.set("#yt-para", { visibility: "hidden" }, 17.55);
-        tl.set("#yt-cheah", { visibility: "visible" }, 26.54);
-        tl.fromTo("#yt-cheah", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 26.54);
+        tl.set("#yt-cheah", { visibility: "visible" }, 23.99);
+        tl.fromTo("#yt-cheah", { opacity: 0, y: -60, rotation: -2 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.6)" }, 23.99);
         tl.to("#yt-cheah", { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, 28.59);
         tl.set("#yt-cheah", { visibility: "hidden" }, 28.79);
-        tl.set("#ch-cheah", { visibility: "visible" }, 26.49);
-        tl.fromTo("#ch-cheah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 26.49);
+        tl.set("#ch-cheah", { visibility: "visible" }, 23.99);
+        tl.fromTo("#ch-cheah", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: "power3.out" }, 23.99);
         tl.to("#ch-cheah", { opacity: 0, duration: 0.15, ease: "power2.in" }, 28.64);
         tl.set("#ch-cheah", { visibility: "hidden" }, 28.79);
         tl.set("#end", { visibility: "visible" }, 84.45);
