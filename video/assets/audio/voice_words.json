@@ -1,893 +1,811 @@
 {
- "duration": 83.01,
+ "duration": 85.94,
  "chunks": [
   [
    0.0,
-   4.53
+   5.48
   ],
   [
-   7.43,
-   18.01
+   8.23,
+   26.62
   ],
   [
-   18.71,
-   26.01
+   27.27,
+   36.81
   ],
   [
-   26.26,
-   31.13
+   37.11,
+   42.25
   ],
   [
-   31.83,
-   38.59
+   42.9,
+   50.41
   ],
   [
-   38.84,
-   48.13
+   50.71,
+   62.33
   ],
   [
-   48.38,
-   58.34
+   62.63,
+   69.85
   ],
   [
-   58.59,
-   66.4
+   70.5,
+   73.06
   ],
   [
-   67.1,
-   69.54
+   73.31,
+   75.22
   ],
   [
-   69.74,
-   70.92
+   75.47,
+   77.81
   ],
   [
-   71.12,
-   72.85
+   78.11,
+   83.3
   ],
   [
-   73.1,
-   80.17
-  ],
-  [
-   80.42,
-   83.01
+   83.6,
+   85.94
   ]
  ],
  "words": [
   {
    "text": "Bermula",
-   "start": 0.03,
-   "end": 0.53,
+   "start": 0.0,
+   "end": 0.61,
    "chunk": 0
   },
   {
    "text": "Januari",
-   "start": 0.53,
-   "end": 1.01,
+   "start": 0.61,
+   "end": 1.09,
    "chunk": 0
   },
   {
    "text": "ini",
-   "start": 1.01,
-   "end": 1.15,
+   "start": 1.09,
+   "end": 1.21,
    "chunk": 0
   },
   {
-   "text": "Kita",
-   "start": 1.15,
-   "end": 1.39,
+   "text": "kita",
+   "start": 1.21,
+   "end": 1.49,
    "chunk": 0
   },
   {
-   "text": "Nak",
-   "start": 1.39,
-   "end": 1.65,
+   "text": "nak",
+   "start": 1.49,
+   "end": 1.73,
    "chunk": 0
   },
   {
-   "text": "Buat",
-   "start": 1.65,
-   "end": 1.95,
+   "text": "buat",
+   "start": 1.73,
+   "end": 1.99,
    "chunk": 0
   },
   {
-   "text": "Transformasi",
-   "start": 1.95,
-   "end": 2.79,
+   "text": "transformasi",
+   "start": 1.99,
+   "end": 2.85,
    "chunk": 0
   },
   {
-   "text": "Sukan",
-   "start": 2.79,
-   "end": 3.34,
+   "text": "sukan",
+   "start": 2.85,
+   "end": 3.65,
    "chunk": 0
   },
   {
-   "text": "Di",
-   "start": 3.35,
-   "end": 3.9,
+   "text": "di",
+   "start": 3.65,
+   "end": 4.69,
    "chunk": 0
   },
   {
-   "text": "Negeri",
-   "start": 3.9,
-   "end": 4.16,
+   "text": "negeri",
+   "start": 4.69,
+   "end": 4.99,
    "chunk": 0
   },
   {
    "text": "Pahang",
-   "start": 4.16,
-   "end": 4.53,
+   "start": 4.99,
+   "end": 5.35,
    "chunk": 0
   },
   {
-   "text": "hari",
-   "start": 7.43,
-   "end": 7.86,
+   "text": "Hari",
+   "start": 8.23,
+   "end": 8.68,
    "chunk": 1
   },
   {
    "text": "ini",
-   "start": 7.86,
-   "end": 8.1,
+   "start": 8.68,
+   "end": 8.92,
    "chunk": 1
   },
   {
-   "text": "Kita",
-   "start": 8.1,
-   "end": 8.4,
+   "text": "kita",
+   "start": 8.92,
+   "end": 9.24,
    "chunk": 1
   },
   {
    "text": "sampaikan",
-   "start": 8.4,
-   "end": 9.06,
+   "start": 9.24,
+   "end": 9.86,
    "chunk": 1
   },
   {
-   "text": "Insentif",
-   "start": 9.26,
-   "end": 11.08,
+   "text": "insentif",
+   "start": 9.86,
+   "end": 11.9,
    "chunk": 1
   },
   {
    "text": "kepada",
-   "start": 11.08,
-   "end": 11.46,
+   "start": 11.9,
+   "end": 12.34,
    "chunk": 1
   },
   {
-   "text": "Atlet-atlet",
-   "start": 11.46,
-   "end": 12.54,
+   "text": "atlet-atlet",
+   "start": 12.34,
+   "end": 13.38,
    "chunk": 1
   },
   {
    "text": "Pahang",
-   "start": 12.54,
-   "end": 13.08,
+   "start": 13.38,
+   "end": 13.92,
    "chunk": 1
   },
   {
-   "text": "Yang",
-   "start": 13.08,
-   "end": 13.56,
+   "text": "yang",
+   "start": 13.92,
+   "end": 14.42,
    "chunk": 1
   },
   {
    "text": "cemerlang",
-   "start": 13.56,
-   "end": 15.03,
+   "start": 14.42,
+   "end": 16.34,
    "chunk": 1
   },
   {
-   "text": "Di",
-   "start": 15.03,
-   "end": 15.71,
-   "chunk": 1
-  },
-  {
-   "text": "SUKMA",
-   "start": 15.71,
-   "end": 16.65,
-   "chunk": 1
-  },
-  {
-   "text": "Dan",
-   "start": 16.65,
-   "end": 17.09,
-   "chunk": 1
-  },
-  {
-   "text": "para",
-   "start": 17.09,
-   "end": 17.47,
+   "text": "di",
+   "start": 16.34,
+   "end": 17.58,
    "chunk": 1
   },
   {
    "text": "SUKMA",
-   "start": 17.47,
-   "end": 18.01,
+   "start": 17.58,
+   "end": 18.5,
+   "chunk": 1
+  },
+  {
+   "text": "dan",
+   "start": 18.5,
+   "end": 18.92,
+   "chunk": 1
+  },
+  {
+   "text": "Para",
+   "start": 18.92,
+   "end": 19.26,
+   "chunk": 1
+  },
+  {
+   "text": "SUKMA",
+   "start": 19.26,
+   "end": 19.86,
+   "chunk": 1
+  },
+  {
+   "text": "dan",
+   "start": 19.86,
+   "end": 20.1,
+   "chunk": 1
+  },
+  {
+   "text": "juga",
+   "start": 20.1,
+   "end": 20.34,
+   "chunk": 1
+  },
+  {
+   "text": "kepada",
+   "start": 20.34,
+   "end": 20.68,
+   "chunk": 1
+  },
+  {
+   "text": "atlet-atlet",
+   "start": 20.68,
+   "end": 21.34,
+   "chunk": 1
+  },
+  {
+   "text": "Pahang",
+   "start": 21.34,
+   "end": 21.92,
+   "chunk": 1
+  },
+  {
+   "text": "yang",
+   "start": 21.92,
+   "end": 22.64,
+   "chunk": 1
+  },
+  {
+   "text": "cemerlang",
+   "start": 22.64,
+   "end": 23.72,
+   "chunk": 1
+  },
+  {
+   "text": "dalam",
+   "start": 23.72,
+   "end": 24.04,
+   "chunk": 1
+  },
+  {
+   "text": "akademik",
+   "start": 24.04,
+   "end": 24.72,
+   "chunk": 1
+  },
+  {
+   "text": "khususnya",
+   "start": 24.72,
+   "end": 25.6,
+   "chunk": 1
+  },
+  {
+   "text": "SPM",
+   "start": 25.6,
+   "end": 26.54,
    "chunk": 1
   },
   {
    "text": "Untuk",
-   "start": 18.75,
-   "end": 19.26,
+   "start": 27.27,
+   "end": 28.52,
    "chunk": 2
   },
   {
-   "text": "Sukan",
-   "start": 19.26,
-   "end": 19.72,
+   "text": "sukan",
+   "start": 28.52,
+   "end": 28.96,
    "chunk": 2
   },
   {
-   "text": "Hoki",
-   "start": 19.72,
-   "end": 20.2,
+   "text": "hoki",
+   "start": 28.96,
+   "end": 29.42,
    "chunk": 2
   },
   {
-   "text": "Dan",
-   "start": 20.2,
-   "end": 20.64,
+   "text": "dan",
+   "start": 29.42,
+   "end": 30.16,
    "chunk": 2
   },
   {
-   "text": "Sukan",
-   "start": 20.65,
-   "end": 21.4,
+   "text": "sukan",
+   "start": 30.16,
+   "end": 30.86,
    "chunk": 2
   },
   {
-   "text": "Menembak",
-   "start": 21.4,
-   "end": 22.0,
+   "text": "menembak",
+   "start": 30.86,
+   "end": 31.48,
    "chunk": 2
   },
   {
-   "text": "Pencapaian",
-   "start": 22.0,
-   "end": 23.24,
+   "text": "pencapaian",
+   "start": 31.48,
+   "end": 33.42,
    "chunk": 2
   },
   {
    "text": "Pahang",
-   "start": 23.24,
-   "end": 23.92,
+   "start": 33.42,
+   "end": 34.08,
    "chunk": 2
   },
   {
-   "text": "Sebagai",
-   "start": 23.92,
-   "end": 24.41,
+   "text": "sebagai",
+   "start": 34.08,
+   "end": 35.1,
    "chunk": 2
   },
   {
-   "text": "Juara",
-   "start": 24.41,
-   "end": 24.99,
+   "text": "juara",
+   "start": 35.1,
+   "end": 35.8,
    "chunk": 2
   },
   {
    "text": "keseluruhan",
-   "start": 24.99,
-   "end": 25.93,
+   "start": 35.8,
+   "end": 36.72,
    "chunk": 2
   },
   {
    "text": "Kita",
-   "start": 26.3,
-   "end": 26.86,
+   "start": 37.11,
+   "end": 37.72,
    "chunk": 3
   },
   {
    "text": "naikkan",
-   "start": 26.86,
-   "end": 27.52,
+   "start": 37.72,
+   "end": 38.4,
    "chunk": 3
   },
   {
    "text": "kadar",
-   "start": 27.52,
-   "end": 27.8,
+   "start": 38.4,
+   "end": 38.72,
    "chunk": 3
   },
   {
    "text": "itu",
-   "start": 27.8,
-   "end": 27.96,
+   "start": 38.72,
+   "end": 38.8,
    "chunk": 3
   },
   {
-   "text": "Daripada",
-   "start": 28.0,
-   "end": 28.49,
+   "text": "daripada",
+   "start": 38.72,
+   "end": 39.56,
    "chunk": 3
   },
   {
    "text": "2,000",
-   "start": 28.49,
-   "end": 29.13,
+   "start": 39.56,
+   "end": 40.34,
    "chunk": 3
   },
   {
-   "text": "Kita",
-   "start": 29.13,
-   "end": 29.53,
+   "text": "kita",
+   "start": 40.34,
+   "end": 40.58,
    "chunk": 3
   },
   {
    "text": "tambah",
-   "start": 29.53,
-   "end": 29.91,
+   "start": 40.58,
+   "end": 40.96,
    "chunk": 3
   },
   {
    "text": "1,000",
-   "start": 29.91,
-   "end": 30.27,
+   "start": 40.96,
+   "end": 41.38,
    "chunk": 3
   },
   {
-   "text": "Jadi",
-   "start": 30.27,
-   "end": 30.51,
+   "text": "jadi",
+   "start": 41.38,
+   "end": 41.54,
    "chunk": 3
   },
   {
    "text": "3,000",
-   "start": 30.51,
-   "end": 31.13,
+   "start": 41.54,
+   "end": 42.25,
    "chunk": 3
   },
   {
    "text": "Pahang",
-   "start": 31.89,
-   "end": 32.69,
+   "start": 42.9,
+   "end": 44.31,
    "chunk": 4
   },
   {
-   "text": "Dah",
-   "start": 32.69,
-   "end": 32.99,
+   "text": "dah",
+   "start": 44.31,
+   "end": 44.73,
    "chunk": 4
   },
   {
-   "text": "Naikkan",
-   "start": 32.99,
-   "end": 33.81,
+   "text": "naikkan",
+   "start": 44.73,
+   "end": 45.57,
    "chunk": 4
   },
   {
-   "text": "Kadar",
-   "start": 33.81,
-   "end": 34.21,
+   "text": "kadar",
+   "start": 45.57,
+   "end": 45.91,
    "chunk": 4
   },
   {
    "text": "gaji",
-   "start": 34.21,
-   "end": 34.53,
+   "start": 45.91,
+   "end": 46.29,
    "chunk": 4
   },
   {
    "text": "minimum",
-   "start": 34.53,
-   "end": 34.95,
+   "start": 46.29,
+   "end": 46.75,
    "chunk": 4
   },
   {
    "text": "jurulatih",
-   "start": 34.95,
-   "end": 35.71,
+   "start": 46.75,
+   "end": 47.43,
    "chunk": 4
   },
   {
    "text": "untuk",
-   "start": 35.74,
-   "end": 35.88,
+   "start": 47.43,
+   "end": 47.75,
    "chunk": 4
   },
   {
    "text": "jurulatih",
-   "start": 35.88,
-   "end": 36.36,
+   "start": 47.75,
+   "end": 48.21,
    "chunk": 4
   },
   {
-   "text": "Sepenuh",
-   "start": 36.36,
-   "end": 36.64,
+   "text": "sepenuh",
+   "start": 48.21,
+   "end": 48.49,
    "chunk": 4
   },
   {
    "text": "masa",
-   "start": 36.64,
-   "end": 36.86,
+   "start": 48.49,
+   "end": 48.67,
    "chunk": 4
   },
   {
-   "text": "di Pahang",
-   "start": 36.86,
-   "end": 37.32,
+   "text": "di",
+   "start": 48.67,
+   "end": 48.83,
+   "chunk": 4
+  },
+  {
+   "text": "Pahang",
+   "start": 48.83,
+   "end": 49.15,
    "chunk": 4
   },
   {
    "text": "2,200",
-   "start": 37.32,
-   "end": 38.42,
+   "start": 49.15,
+   "end": 50.41,
    "chunk": 4
   },
   {
-   "text": "Dengan",
-   "start": 38.94,
-   "end": 39.64,
-   "chunk": 5
-  },
-  {
-   "text": "Pelarasan",
-   "start": 39.64,
-   "end": 40.32,
-   "chunk": 5
-  },
-  {
-   "text": "Gaji",
-   "start": 40.32,
-   "end": 40.6,
-   "chunk": 5
-  },
-  {
-   "text": "Baru",
-   "start": 40.6,
-   "end": 41.02,
-   "chunk": 5
-  },
-  {
-   "text": "ini",
-   "start": 41.02,
-   "end": 41.17,
-   "chunk": 5
-  },
-  {
-   "text": "Mereka",
-   "start": 41.23,
-   "end": 41.37,
-   "chunk": 5
-  },
-  {
-   "text": "Akan",
-   "start": 41.37,
-   "end": 41.73,
-   "chunk": 5
-  },
-  {
-   "text": "Menerima",
-   "start": 41.73,
-   "end": 43.42,
-   "chunk": 5
-  },
-  {
-   "text": "Kenaikan",
-   "start": 43.42,
-   "end": 44.1,
-   "chunk": 5
-  },
-  {
-   "text": "Antara",
-   "start": 44.1,
-   "end": 44.72,
-   "chunk": 5
-  },
-  {
-   "text": "200",
-   "start": 44.72,
-   "end": 45.02,
-   "chunk": 5
-  },
-  {
-   "text": "Ringgit",
-   "start": 45.02,
-   "end": 45.8,
-   "chunk": 5
-  },
-  {
-   "text": "Kepada",
-   "start": 45.8,
-   "end": 46.43,
-   "chunk": 5
-  },
-  {
-   "text": "1,200",
-   "start": 46.43,
-   "end": 47.41,
-   "chunk": 5
-  },
-  {
-   "text": "Ringgit",
-   "start": 47.41,
-   "end": 48.13,
-   "chunk": 5
-  },
-  {
    "text": "Kadar",
-   "start": 48.38,
-   "end": 49.19,
-   "chunk": 6
+   "start": 50.71,
+   "end": 51.56,
+   "chunk": 5
   },
   {
-   "text": "Gaji",
-   "start": 49.19,
-   "end": 49.57,
-   "chunk": 6
+   "text": "gaji",
+   "start": 51.56,
+   "end": 51.92,
+   "chunk": 5
   },
   {
    "text": "jurulatih",
-   "start": 49.57,
-   "end": 50.25,
-   "chunk": 6
+   "start": 51.92,
+   "end": 52.62,
+   "chunk": 5
   },
   {
-   "text": "Penuh",
-   "start": 50.25,
-   "end": 50.63,
-   "chunk": 6
+   "text": "penuh",
+   "start": 52.62,
+   "end": 52.98,
+   "chunk": 5
   },
   {
-   "text": "Masa",
-   "start": 50.63,
-   "end": 51.01,
-   "chunk": 6
+   "text": "masa",
+   "start": 52.98,
+   "end": 53.3,
+   "chunk": 5
   },
   {
-   "text": "di Pahang",
-   "start": 51.01,
-   "end": 51.75,
-   "chunk": 6
+   "text": "di",
+   "start": 53.3,
+   "end": 53.54,
+   "chunk": 5
   },
   {
-   "text": "Bermula",
-   "start": 51.75,
-   "end": 52.29,
-   "chunk": 6
+   "text": "Pahang",
+   "start": 53.54,
+   "end": 54.12,
+   "chunk": 5
+  },
+  {
+   "text": "bermula",
+   "start": 54.12,
+   "end": 55.52,
+   "chunk": 5
   },
   {
    "text": "Januari",
-   "start": 52.29,
-   "end": 52.81,
-   "chunk": 6
+   "start": 55.52,
+   "end": 56.04,
+   "chunk": 5
   },
   {
    "text": "2027",
-   "start": 52.81,
-   "end": 53.97,
-   "chunk": 6
+   "start": 56.04,
+   "end": 57.54,
+   "chunk": 5
   },
   {
-   "text": "Sangat",
-   "start": 54.01,
-   "end": 54.79,
-   "chunk": 6
+   "text": "sangat",
+   "start": 57.54,
+   "end": 58.42,
+   "chunk": 5
   },
   {
-   "text": "Kompetitif",
-   "start": 54.79,
-   "end": 55.53,
-   "chunk": 6
+   "text": "kompetitif",
+   "start": 58.42,
+   "end": 59.48,
+   "chunk": 5
   },
   {
-   "text": "Tinggi",
-   "start": 55.53,
-   "end": 56.12,
-   "chunk": 6
+   "text": "tinggi",
+   "start": 59.56,
+   "end": 60.18,
+   "chunk": 5
   },
   {
-   "text": "Berbanding",
-   "start": 56.12,
-   "end": 57.51,
-   "chunk": 6
+   "text": "berbanding",
+   "start": 60.18,
+   "end": 61.46,
+   "chunk": 5
   },
   {
-   "text": "Negeri-negeri",
-   "start": 57.51,
-   "end": 58.07,
-   "chunk": 6
+   "text": "negeri-negeri",
+   "start": 61.46,
+   "end": 62.02,
+   "chunk": 5
   },
   {
-   "text": "Lain",
-   "start": 58.07,
-   "end": 58.34,
-   "chunk": 6
+   "text": "lain",
+   "start": 62.02,
+   "end": 62.22,
+   "chunk": 5
   },
   {
    "text": "Saya",
-   "start": 58.61,
-   "end": 59.04,
-   "chunk": 7
+   "start": 62.63,
+   "end": 63.68,
+   "chunk": 6
   },
   {
    "text": "nak",
-   "start": 59.04,
-   "end": 59.28,
-   "chunk": 7
+   "start": 63.68,
+   "end": 63.94,
+   "chunk": 6
   },
   {
-   "text": "Pelawa",
-   "start": 59.28,
-   "end": 59.86,
-   "chunk": 7
+   "text": "pelawa",
+   "start": 63.94,
+   "end": 64.48,
+   "chunk": 6
   },
   {
    "text": "jurulatih",
-   "start": 59.86,
-   "end": 60.81,
-   "chunk": 7
+   "start": 64.48,
+   "end": 65.88,
+   "chunk": 6
   },
   {
-   "text": "Di",
-   "start": 60.85,
-   "end": 61.01,
-   "chunk": 7
+   "text": "di",
+   "start": 65.88,
+   "end": 66.12,
+   "chunk": 6
   },
   {
    "text": "luar",
-   "start": 61.01,
-   "end": 61.41,
-   "chunk": 7
+   "start": 66.12,
+   "end": 66.58,
+   "chunk": 6
   },
   {
-   "text": "Sana",
-   "start": 61.41,
-   "end": 61.71,
-   "chunk": 7
+   "text": "sana",
+   "start": 66.58,
+   "end": 66.9,
+   "chunk": 6
   },
   {
-   "text": "Yang",
-   "start": 61.71,
-   "end": 62.22,
-   "chunk": 7
-  },
-  {
-   "text": "Memang",
-   "start": 62.22,
-   "end": 62.58,
-   "chunk": 7
-  },
-  {
-   "text": "Berkelayakan",
-   "start": 62.59,
-   "end": 63.43,
-   "chunk": 7
-  },
-  {
-   "text": "Berkemahiran",
-   "start": 63.49,
-   "end": 64.33,
-   "chunk": 7
-  },
-  {
-   "text": "Cuba",
-   "start": 64.39,
-   "end": 64.78,
-   "chunk": 7
-  },
-  {
-   "text": "Cari",
-   "start": 64.78,
-   "end": 65.52,
-   "chunk": 7
-  },
-  {
-   "text": "Rezeki",
-   "start": 65.52,
-   "end": 65.96,
-   "chunk": 7
-  },
-  {
-   "text": "Di",
-   "start": 65.96,
-   "end": 66.1,
-   "chunk": 7
-  },
-  {
-   "text": "Pahang",
-   "start": 66.1,
-   "end": 66.4,
-   "chunk": 7
-  },
-  {
-   "text": "Saya",
-   "start": 67.1,
-   "end": 67.414,
-   "chunk": 8
-  },
-  {
-   "text": "nak",
-   "start": 67.449,
-   "end": 67.684,
-   "chunk": 8
+   "text": "cuba",
+   "start": 66.9,
+   "end": 68.18,
+   "chunk": 6
   },
   {
    "text": "cari",
-   "start": 67.71,
-   "end": 68.024,
-   "chunk": 8
+   "start": 68.18,
+   "end": 69.0,
+   "chunk": 6
   },
   {
-   "text": "jurulatih",
-   "start": 68.059,
-   "end": 68.764,
-   "chunk": 8
+   "text": "rezeki",
+   "start": 69.0,
+   "end": 69.42,
+   "chunk": 6
   },
   {
-   "text": "olahraga",
-   "start": 68.843,
-   "end": 69.47,
-   "chunk": 8
-  },
-  {
-   "text": "Yang",
-   "start": 69.83,
-   "end": 70.12,
-   "chunk": 9
-  },
-  {
-   "text": "Kedua",
-   "start": 70.12,
-   "end": 70.54,
-   "chunk": 9
-  },
-  {
-   "text": "Silat",
-   "start": 70.54,
-   "end": 70.92,
-   "chunk": 9
-  },
-  {
-   "text": "Yang",
-   "start": 71.15,
-   "end": 71.36,
-   "chunk": 10
-  },
-  {
-   "text": "Ketiga",
-   "start": 71.43,
-   "end": 72.15,
-   "chunk": 10
-  },
-  {
-   "text": "Angkat",
-   "start": 72.15,
-   "end": 72.49,
-   "chunk": 10
-  },
-  {
-   "text": "Berat",
-   "start": 72.49,
-   "end": 72.81,
-   "chunk": 10
-  },
-  {
-   "text": "Sebab",
-   "start": 73.18,
-   "end": 73.66,
-   "chunk": 11
-  },
-  {
-   "text": "Untuk",
-   "start": 73.66,
-   "end": 73.93,
-   "chunk": 11
-  },
-  {
-   "text": "Olahraga",
-   "start": 73.93,
-   "end": 74.59,
-   "chunk": 11
-  },
-  {
-   "text": "Silat",
-   "start": 74.59,
-   "end": 75.41,
-   "chunk": 11
-  },
-  {
-   "text": "Dan",
-   "start": 75.41,
-   "end": 75.57,
-   "chunk": 11
-  },
-  {
-   "text": "Angkat",
-   "start": 75.57,
-   "end": 75.79,
-   "chunk": 11
-  },
-  {
-   "text": "Berat",
-   "start": 75.79,
-   "end": 76.13,
-   "chunk": 11
+   "text": "di",
+   "start": 69.42,
+   "end": 69.56,
+   "chunk": 6
   },
   {
    "text": "Pahang",
-   "start": 76.56,
-   "end": 77.04,
-   "chunk": 11
-  },
-  {
-   "text": "Satu",
-   "start": 77.04,
-   "end": 77.38,
-   "chunk": 11
-  },
-  {
-   "text": "Ketika",
-   "start": 77.38,
-   "end": 77.82,
-   "chunk": 11
-  },
-  {
-   "text": "Adalah",
-   "start": 77.82,
-   "end": 78.18,
-   "chunk": 11
-  },
-  {
-   "text": "Jaguh",
-   "start": 78.18,
-   "end": 78.82,
-   "chunk": 11
-  },
-  {
-   "text": "Untuk",
-   "start": 78.82,
-   "end": 79.26,
-   "chunk": 11
-  },
-  {
-   "text": "Sukan",
-   "start": 79.26,
-   "end": 79.86,
-   "chunk": 11
-  },
-  {
-   "text": "Ini",
-   "start": 79.86,
-   "end": 80.08,
-   "chunk": 11
+   "start": 69.56,
+   "end": 69.84,
+   "chunk": 6
   },
   {
    "text": "Saya",
-   "start": 80.42,
-   "end": 80.54,
-   "chunk": 12
+   "start": 70.5,
+   "end": 70.97,
+   "chunk": 7
   },
   {
-   "text": "Nak",
-   "start": 80.54,
-   "end": 80.7,
-   "chunk": 12
+   "text": "nak",
+   "start": 70.97,
+   "end": 71.07,
+   "chunk": 7
   },
   {
-   "text": "Kembalikan",
-   "start": 80.7,
-   "end": 81.48,
-   "chunk": 12
+   "text": "cari",
+   "start": 71.07,
+   "end": 71.39,
+   "chunk": 7
+  },
+  {
+   "text": "jurulatih",
+   "start": 71.39,
+   "end": 72.35,
+   "chunk": 7
+  },
+  {
+   "text": "olahraga",
+   "start": 72.35,
+   "end": 72.91,
+   "chunk": 7
+  },
+  {
+   "text": "Yang",
+   "start": 73.31,
+   "end": 74.3,
+   "chunk": 8
+  },
+  {
+   "text": "kedua",
+   "start": 74.3,
+   "end": 74.7,
+   "chunk": 8
+  },
+  {
+   "text": "silat",
+   "start": 74.7,
+   "end": 75.14,
+   "chunk": 8
+  },
+  {
+   "text": "Yang",
+   "start": 75.47,
+   "end": 76.52,
+   "chunk": 9
+  },
+  {
+   "text": "ketiga",
+   "start": 76.52,
+   "end": 77.06,
+   "chunk": 9
+  },
+  {
+   "text": "angkat",
+   "start": 77.06,
+   "end": 77.4,
+   "chunk": 9
+  },
+  {
+   "text": "berat",
+   "start": 77.4,
+   "end": 77.72,
+   "chunk": 9
+  },
+  {
+   "text": "Pahang",
+   "start": 78.11,
+   "end": 78.88,
+   "chunk": 10
+  },
+  {
+   "text": "satu",
+   "start": 78.88,
+   "end": 79.18,
+   "chunk": 10
+  },
+  {
+   "text": "ketika",
+   "start": 79.18,
+   "end": 79.68,
+   "chunk": 10
+  },
+  {
+   "text": "adalah",
+   "start": 79.68,
+   "end": 79.98,
+   "chunk": 10
+  },
+  {
+   "text": "jaguh",
+   "start": 79.98,
+   "end": 80.64,
+   "chunk": 10
+  },
+  {
+   "text": "untuk",
+   "start": 80.64,
+   "end": 81.7,
+   "chunk": 10
+  },
+  {
+   "text": "sukan",
+   "start": 81.7,
+   "end": 82.72,
+   "chunk": 10
+  },
+  {
+   "text": "ini",
+   "start": 82.72,
+   "end": 82.92,
+   "chunk": 10
+  },
+  {
+   "text": "Saya",
+   "start": 83.6,
+   "end": 83.73,
+   "chunk": 11
+  },
+  {
+   "text": "nak",
+   "start": 83.73,
+   "end": 83.87,
+   "chunk": 11
+  },
+  {
+   "text": "kembalikan",
+   "start": 83.87,
+   "end": 84.67,
+   "chunk": 11
   },
   {
    "text": "kegemilangan",
-   "start": 81.48,
-   "end": 82.72,
-   "chunk": 12
+   "start": 84.67,
+   "end": 85.517,
+   "chunk": 11
   },
   {
-   "text": "Itu",
-   "start": 82.72,
-   "end": 82.94,
-   "chunk": 12
+   "text": "itu",
+   "start": 85.093,
+   "end": 85.94,
+   "chunk": 11
   }
  ]
 }

@@ -23,7 +23,7 @@ SEG = 2 * BAR
 
 # intensity curve (0..1): soft hook, build into para block, steady body, final swell
 def intensity(x):
-    pts = [(0, .7), (4.8, .8), (4.9, 1.0), (7.6, .9), (18.3, .9), (31.4, .9), (66.7, 1.0), (80.5, 1.0), (83.4, 1.0), (DUR, .9)]
+    pts = [(0, .7), (5.75, .8), (5.85, 1.0), (8.6, .9), (26.9, .9), (42.5, .9), (70.1, 1.0), (83.5, 1.0), (86.3, 1.0), (DUR, .9)]
     xs, ys = zip(*pts); return np.interp(x, xs, ys)
 I = intensity(t)
 
@@ -81,10 +81,10 @@ for b in range(nb):
     if b % 4 == 2: timp(st, 0.55, 49)
     if b % 8 == 7: timp(st + BEAT / 2, 0.4, 62)
 # big hits: hook, para entry, chapter changes, end card
-for st in (0.0, 4.9, 18.31, 31.43, 66.7, 83.4):
+for st in (0.0, 5.85, 26.92, 42.55, 70.15, 86.33):
     timp(st, 1.5, 41); timp(st + 0.01, 0.8, 82)
 # riser into para block and final
-for a0, a1 in ((3.4, 4.9), (81.9, 83.4)):
+for a0, a1 in ((4.35, 5.85), (84.83, 86.33)):
     a, e = int(a0 * SR), int(a1 * SR); ts = np.arange(e - a) / SR
     nz = hp(rng.standard_normal(e - a), 1500) * (ts / (a1 - a0)) ** 3 * 0.05
     perc[a:e] += nz
